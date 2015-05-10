@@ -67,7 +67,7 @@ has 'grammar' => (
 
            <rule: Set> set <Variable=Token>=<Value=Token>
 
-           <rule: For> for <Condition> <Statement>
+           <rule: For> for <Token> DO <Statement>
 
            <token: Operator> NE | EQ | GTR | ==
 
