@@ -100,7 +100,10 @@ TODO: Exception on fail
 sub parse {
     my $self = shift;
     my $text = shift;
-    
+   
+    # First join lines splited in multiple lines
+    $text =~ s/\^\r\n//msg;
+
     if ($text =~ $self->grammar) {
         return \%/;
     } else {
