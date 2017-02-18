@@ -33,7 +33,7 @@ has 'grammar' => (
            <nocontext:>
            <File>
     
-           <rule: File> (?:<[Lines]>\r\n)*
+           <rule: File> (?:<[Lines]>\n)*
 
            <rule: Lines> <Comment> | <Label> | <Statement>
 
@@ -71,11 +71,11 @@ has 'grammar' => (
 
            <token: Operator> NE | EQ | GTR | ==
 
-           <token: Path> [^:\r\n\s]+
+           <token: Path> [^:\n\s]+
 
            <token: Literal> [^\s]+
 
-           <token: Token> [^\r\n]*
+           <token: Token> [^\n]*
 
         }xmi;
     }
@@ -101,8 +101,14 @@ sub parse {
     my $self = shift;
     my $text = shift;
    
-    # First join lines splited in multiple lines
-    $text =~ s/\^\r\n//msg;
+    if ($^O eq 'MSWin32') {
+        # First join lines splited in multiple lines
+        $text =~ s/\^\n//msg;
+    } else {
+        # First join lines splited in multiple lines
+        $text =~ s/\^\r\n//msg;
+        $text =~ s/\r\n/\n/msg;
+    }
 
     if ($text =~ $self->grammar) {
         return \%/;
