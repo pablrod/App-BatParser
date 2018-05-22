@@ -1,16 +1,16 @@
-use strict;
-use warnings;
 package App::BatParser;
+
+use utf8;
 
 use Regexp::Grammars;
 use Moose;
 use namespace::autoclean;
 
+# VERSION
+
+# ABSTRACT: Parse DOS .bat and .cmd files
+
 =encoding utf-8
-
-=head1 NAME
-
-App::BatParser - Parse DOS .bat and .cmd files
 
 =head1 SYNOPSYS
 
@@ -23,6 +23,9 @@ App::BatParser - Parse DOS .bat and .cmd files
 
     say Dumper($parser->parse($bat_string));
     
+=head1 DESCRIPTION
+
+Parse DOS .bat and .cmd files
 
 =cut
 
@@ -93,7 +96,7 @@ Parses the text as a bat/cmd file
 
 Hash representation of file on success, empty list on fail
 
-TODO: Exception on fail
+Exception on fail
 
 =cut
 
