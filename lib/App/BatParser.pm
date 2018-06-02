@@ -3,7 +3,7 @@ package App::BatParser;
 use utf8;
 
 use Regexp::Grammars;
-use Moose;
+use Moo;
 use namespace::autoclean;
 
 # VERSION
