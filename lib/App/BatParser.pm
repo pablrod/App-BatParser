@@ -29,6 +29,16 @@ Parse DOS .bat and .cmd files
 
 =cut
 
+=head1 METHODS
+
+=cut
+
+=head2 grammar
+
+Returns the L<Regexp::Grammars>'s grammar
+
+=cut
+
 has 'grammar' => (
     is => 'ro',
     default => sub {
@@ -84,10 +94,6 @@ has 'grammar' => (
     }
 );
 
-=head1 METHODS
-
-=cut
-
 =head2 parse
 
 Parses the text as a bat/cmd file
@@ -95,8 +101,6 @@ Parses the text as a bat/cmd file
 =head3 Returns
 
 Hash representation of file on success, empty list on fail
-
-Exception on fail
 
 =cut
 
