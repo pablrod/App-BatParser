@@ -1,3 +1,5 @@
+0.007 2018-06-02 15:00:00+0000
+  -Fix labels can't have spaces
 0.006 2018-06-02 15:00:00+0000
   -Switch from Moose to Moo
   -Add Changes file
