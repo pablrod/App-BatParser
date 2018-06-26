@@ -48,11 +48,11 @@ has 'grammar' => (
     
            <rule: File> (?:<[Lines]>\n)*
 
-           <rule: Lines> <Comment> | <Label> | <Statement>
+           <rule: Lines> <Comment> | <Label> | <Statement> 
 
            <rule: Comment> \:\:<Text=Token> | REM <Text=Token>
 
-           <rule: Label> \:(?!:)<Identifier=Token>
+           <rule: Label> \:(?!:)<Identifier=LabelIdentifier>[^\n]*
 
            <rule: Statement> \@?<Command>
            
@@ -76,7 +76,7 @@ has 'grammar' => (
 
            <rule: Call> call <Token>
 
-           <rule: Goto> Goto <Identifier=Token>
+           <rule: Goto> Goto <Identifier=LabelIdentifier>
 
            <rule: Set> set <Variable=Token>=<Value=Token>
 
@@ -89,6 +89,8 @@ has 'grammar' => (
            <token: Literal> [^\s]+
 
            <token: Token> [^\n]*
+
+           <token: LabelIdentifier> [^\n\s]*
 
         }xmi;
     }
