@@ -90,7 +90,7 @@ has 'grammar' => (
 
            <token: Token> [^\n]*
 
-           <token: LabelIdentifier> [^\n\s]*
+           <token: LabelIdentifier> [^\n\s\:]*
 
         }xmi;
     }
