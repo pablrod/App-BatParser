@@ -4,7 +4,7 @@ App::BatParser - Parse DOS .bat and .cmd files
 
 # VERSION
 
-version 0.007
+version 0.008
 
 # DESCRIPTION
 
