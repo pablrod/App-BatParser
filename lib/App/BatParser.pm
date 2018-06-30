@@ -76,7 +76,7 @@ has 'grammar' => (
 
            <rule: Call> call <Token>
 
-           <rule: Goto> Goto <Identifier=LabelIdentifier>
+           <rule: Goto> Goto :?<Identifier=LabelIdentifier>
 
            <rule: Set> set <Variable=Token>=<Value=Token>
 
