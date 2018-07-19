@@ -16,7 +16,7 @@ use Path::Tiny;
                                                       'Command' => {
                                                                      'SpecialCommand' => {
                                                                                            'For' => {
-                                                                                                      'Token' => '/f "delims=" %%a IN (c:\\tmp\\file) ',
+                                                                                                      'Token' => '/f "delims=" %%a IN (c:\\tmp\\file)',
                                                                                                       'Statement' => {
                                                                                                                        'Command' => {
                                                                                                                                       'SpecialCommand' => {
@@ -32,11 +32,6 @@ use Path::Tiny;
                                                                    }
                                                     }
                                    },
-                                   {
-                                     'Statement' => {
-                                                      'Command' => ''
-                                                    }
-                                   }
                                  ]
                     }
 
