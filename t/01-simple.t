@@ -67,11 +67,6 @@ use Path::Tiny;
                                                     'Text' => 'Alternative form of comment'
                                                   }
                                    },
-                                   {
-                                     'Statement' => {
-                                                      'Command' => ''
-                                                    }
-                                   }
                                  ]
                     }
             };

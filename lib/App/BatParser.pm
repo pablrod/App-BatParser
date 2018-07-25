@@ -46,9 +46,9 @@ has 'grammar' => (
            <nocontext:>
            <File>
     
-           <rule: File> (?:<[Lines]>\n)*
+           <rule: File> (?:<[Lines]>)*
 
-           <rule: Lines> <Comment> | <Label> | <Statement> 
+           <rule: Lines> (?: <Comment> | <Label> | <Statement> )\s*\n
 
            <rule: Comment> \:\:<Text=Token> | REM <Text=Token>
 
@@ -56,7 +56,7 @@ has 'grammar' => (
 
            <rule: Statement> \@?<Command>
            
-           <rule: Command> (?:<SpecialCommand> || <SimpleCommand=Token>)
+           <rule: Command> (?: <SpecialCommand> | <SimpleCommand=Token> )
 
            <rule: SpecialCommand> <If> | <Call> | <For> | <Goto> | <Set> | <Echo>
 
@@ -88,8 +88,8 @@ has 'grammar' => (
 
            <token: Literal> [^\s]+
 
-           <token: Token> [^\n]*
-
+           <token: Token> [^\n]*?
+           
            <token: LabelIdentifier> [^\n\s\:]*
 
         }xmi;
