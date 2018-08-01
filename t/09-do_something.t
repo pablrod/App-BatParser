@@ -53,9 +53,7 @@ use Path::Tiny;
     my $cmd_contents = path($cmd_file)->slurp;
     my $parser = App::BatParser->new;
     my $ast = $parser->parse($cmd_contents);
-    use Data::Dumper;
-    print Dumper $ast;
 
-    is_deeply($ast, $ast_expected, 'Parsing a cmd with whitespaces in the end of lines');
+    is_deeply($ast, $ast_expected, 'Parsing a cmd with a DO command');
 }
 
