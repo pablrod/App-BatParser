@@ -80,7 +80,7 @@ has 'grammar' => (
 
            <rule: Set> set <Variable=Token>=<Value=Token>
 
-           <rule: For> for <Token> DO <Statement>
+           <rule: For> for <Token> (?:\s+DO\s+) <Statement>
 
            <token: Operator> NEQ | EQU | GTR | == | LSS | LEQ | GEQ
 
